@@ -1,0 +1,13 @@
+// config file to enable absolute imports
+
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@components": ["components"],
+        "@components/*": ["components/*"],
+        "@sections": ["sections"],
+        "@sections/*": ["sections/*"]
+      }
+    }
+  }
