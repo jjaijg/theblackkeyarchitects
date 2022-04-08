@@ -60,7 +60,7 @@ const BANNER_DATA = [
 const Banner = () => {
   return (
     <>
-      <Carousel infiniteLoop autoPlay swipeable>
+      <Carousel infiniteLoop autoPlay swipeable showThumbs={false}>
         {BANNER_DATA.map((banner) => (
           <BannerCard key={banner.key} {...banner} />
         ))}

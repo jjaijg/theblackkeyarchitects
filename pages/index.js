@@ -1,8 +1,15 @@
 import { Layout } from "@components";
 import Head from "next/head";
-import { Banner } from "sections";
+import { AboutUs, Banner, WhatWeDo, Services, Projects } from "@sections";
 
-export default function Home() {
+import {
+  useGetCategoriesWithProjects,
+  getCategoriesWithProjects,
+} from "services";
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+export default function Home({categories}) {
   return (
     <div className="flex flex-col  justify-center min-h-screen pb-2">
       <Head>
@@ -11,13 +18,30 @@ export default function Home() {
       </Head>
       <Layout>
         <Banner />
-        <h1 className="text-6xl font-bold">
-          Welcome to{" "}
-          <a className="text-blue-600" href="https://nextjs.org">
-            <img src="/images/logo.png" className="bg-black inline-block" />
-          </a>
-        </h1>
+        <AboutUs />
+        <WhatWeDo />
+        <Services />
+        <Projects categories={categories} />
       </Layout>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetch(`${API_URL}api/project-categories?populate=*`);
+  const categories = await res.json();
+
+  if (!categories) {
+    return {
+      props: {
+        categories: [],
+      },
+    };
+  }
+
+  return {
+    props: {
+      categories: categories.data,
+    },
+  };
 }
