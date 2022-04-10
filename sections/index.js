@@ -1,0 +1,5 @@
+export {default as Banner} from './Banner'
+export {default as AboutUs} from './AboutUs'
+export {default as WhatWeDo} from './WhatWeDo'
+export {default as Services} from './Services'
+export {default as Projects} from './Projects'

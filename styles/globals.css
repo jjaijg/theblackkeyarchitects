@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: rgb(51 65 85);
+}
+
+.carousel .slide {
+  text-align: inherit !important;
+}
+
+.carousel-wrapper,
+.carousel,
+.carousel > .slider-wrapper,
+.carousel > .slider-wrapper > .slider {
+  height: 100%;
+}
+
+.service-card {
+  background-color: white;
+  border-width: 5px;
+  border-style: solid;
+  border-image: linear-gradient(
+      to top,
+      rgb(255, 199, 154),
+      rgb(255, 255, 255),
+      rgba(0, 0, 0, 0)
+    )
+    1;
+  transition: border-image ease-in-out 500ms;
+}
+.service-card:hover {
+  border-image: linear-gradient(to top, rgb(255, 199, 154), rgb(255, 199, 154))
+    1;
+  /* transition: border-image ease-in-out 500ms; */
+}
+
+.service-icon {
+  transition: transform ease-in-out 500ms;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.2);
+  transition: transform ease-in-out 500ms;
+}
+
+.custom-icon {
+  height: 6rem;
+  width: 4rem;
+}
