@@ -1,17 +1,20 @@
 import { colors } from "@constants";
 import React from "react";
-import MaintainSvg from "./maintenance.svg";
+import maintainSvg from "./maintenance.svg";
+import Image from "next/image";
 function maintenance() {
   return (
-    <div className="flex flex-col relative">
-      <div className="w-screen h-screen">
-        <MaintainSvg />
-      </div>
-      <div className="absolute top-32 left-1/3">
-        <h2 className={`text-5xl mx-10 mb-6 ${colors.textPrimary} text-center`}>
+    <div className="w-screen h-screen relative">
+      <Image src={maintainSvg} layout="fill" objectFit="contain" />
+      <div className="absolute  top-10 right-2 lg:top-20 lg:right-4">
+        <h2
+          className={`lg:text-5xl text-3xl lg:mx-10 mb-3 lg:mb-6 ${colors.textPrimary} text-center`}
+        >
           Page is under construction
         </h2>
-        <p className={`text-3xl mx-10 ${colors.textPrimary} text-left`}>
+        <p
+          className={`text-2xl lg:text-3xl lg:mx-10 ${colors.textPrimary} text-left`}
+        >
           Please visit us soon!
         </p>
       </div>
